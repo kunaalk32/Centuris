@@ -92,6 +92,19 @@
       });
     });
 
+    // Each incoming panel's shadow fades in over the first 120px it travels up the screen
+    document.querySelectorAll(".stack + .stack").forEach((stack) => {
+      gsap.fromTo(
+        stack.querySelector(".panel"),
+        { "--slide-shadow": 0 },
+        {
+          "--slide-shadow": 1,
+          ease: "none",
+          scrollTrigger: { trigger: stack, start: "top bottom", end: "top bottom-=120", scrub: true },
+        }
+      );
+    });
+
     // Hero figures fade, rise and count up on load from their data-count value, one after another.
     // The HTML holds the final text.
     document.querySelectorAll("[data-count]").forEach((el, i) => {
