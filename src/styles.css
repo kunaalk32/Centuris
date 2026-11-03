@@ -1,0 +1,406 @@
+@import "tailwindcss";
+@import "../brand/tokens.css" layer(base);
+
+/* Maps brand tokens to Tailwind utilities. Values live in brand/tokens.json. */
+@theme inline {
+  --color-surface: var(--surface);
+  --color-surface-sunk: var(--surface-sunk);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-brand: var(--brand);
+  --color-on-brand: var(--on-brand);
+  --color-on-brand-muted: var(--on-brand-muted);
+  --color-camel: var(--camel);
+  --color-camel-text: var(--camel-text);
+  --color-on-camel: var(--on-camel);
+  --color-sand: var(--sand);
+  --color-line: var(--line);
+  --color-negative: var(--negative);
+}
+
+@theme {
+  --font-sans: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --text-display: 4rem;
+  --text-display--line-height: 4.25rem;
+  --text-display--letter-spacing: -0.02em;
+  --text-h1: 2.75rem;
+  --text-h1--line-height: 3.125rem;
+  --text-h1--letter-spacing: -0.02em;
+  --text-h2: 2rem;
+  --text-h2--line-height: 2.375rem;
+  --text-h2--letter-spacing: -0.01em;
+  --text-figure: 2.5rem;
+  --text-figure--line-height: 2.75rem;
+  --text-figure--letter-spacing: -0.01em;
+  --text-h3: 1.25rem;
+  --text-h3--line-height: 1.75rem;
+  --text-body: 1.0625rem;
+  --text-body--line-height: 1.75rem;
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.375rem;
+  --text-fine: 0.625rem;
+  --text-fine--line-height: 1rem;
+  --container-site: 1200px;
+  --ease-settle: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p,
+  td,
+  dd {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  /* Ink Black panels: brand rule colours, plus error and focus colours from the dark theme */
+  .on-dark {
+    --line: rgb(246 243 236 / 0.24);
+    --negative: #e08a7e;
+    --focus: #c9a876;
+  }
+}
+
+@layer components {
+  .skip-link {
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    z-index: 60;
+    padding: 8px 16px;
+    background: var(--surface);
+    color: var(--ink);
+    transform: translateY(-200%);
+  }
+
+  .skip-link:focus {
+    transform: none;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: var(--radius-sm);
+    background: var(--camel);
+    color: var(--on-camel);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 300ms var(--ease-settle), transform 300ms var(--ease-settle);
+  }
+
+  @media (hover: hover) {
+    .btn:hover {
+      background: color-mix(in srgb, var(--camel) 88%, var(--on-brand));
+    }
+  }
+
+  /* Feedback lands on the press, then eases back on release */
+  .btn:active,
+  .btn-quiet:active {
+    transform: scale(0.97);
+    transition-duration: 100ms;
+  }
+
+  .btn:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+
+  /* Header action. Quiet so camel marks only the main action in each view. */
+  .btn-quiet {
+    display: inline-flex;
+    padding: 8px 16px;
+    border: 1px solid currentColor;
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    transition: background-color 300ms var(--ease-settle), transform 300ms var(--ease-settle);
+  }
+
+  @media (hover: hover) {
+    .btn-quiet:hover {
+      background: color-mix(in srgb, currentColor 12%, transparent);
+    }
+  }
+
+  /* Signature: a thin marked line wherever a limit or position is stated */
+  .limit-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    margin-left: -1px;
+  }
+
+  .limit-mark {
+    display: inline-block;
+    width: 2px;
+    height: 16px;
+    margin-right: 12px;
+    background: var(--camel);
+    vertical-align: -3px;
+  }
+
+  .link {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    transition: color 300ms var(--ease-settle);
+  }
+
+  @media (hover: hover) {
+    .link:hover {
+      color: var(--camel-text);
+    }
+
+    .on-dark .link:hover {
+      color: var(--camel);
+    }
+  }
+
+  .link:active {
+    color: var(--camel-text);
+    transition-duration: 100ms;
+  }
+
+  .on-dark .link:active {
+    color: var(--camel);
+  }
+
+  /* Visible stand in for a fact we do not have yet */
+  .tbd {
+    border-bottom: 1px dashed currentColor;
+    opacity: 0.75;
+  }
+
+  /* Brand stat row: figures divided by vertical hairlines */
+  .stat-row > div {
+    padding: 24px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  @media (min-width: 768px) {
+    .stat-row > div {
+      padding: 0 24px;
+      border-top: 0;
+      border-left: 1px solid var(--line);
+    }
+
+    .stat-row > div:first-child {
+      padding-left: 0;
+      border-left: 0;
+    }
+  }
+
+  .field {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid var(--on-brand-muted);
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: var(--on-brand);
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .field option {
+    color: var(--ink);
+  }
+
+  .field[aria-invalid="true"] {
+    border-color: var(--negative);
+  }
+
+  .field-error {
+    color: var(--negative);
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+
+  /* Header sits on the hero in ivory, then becomes solid once a panel reaches it */
+  .site-header {
+    color: var(--on-brand);
+    transition: background-color 300ms var(--ease-settle), color 300ms var(--ease-settle), box-shadow 300ms var(--ease-settle);
+  }
+
+  /* Once solid, the header is a translucent layer that content scrolls under */
+  .site-header.is-solid {
+    background: color-mix(in srgb, var(--surface) 85%, transparent);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    backdrop-filter: blur(20px) saturate(180%);
+    color: var(--ink);
+    box-shadow: var(--shadow-raised);
+  }
+
+  .logo-light {
+    display: none;
+  }
+
+  .site-header.is-solid .logo-light {
+    display: block;
+  }
+
+  .site-header.is-solid .logo-dark {
+    display: none;
+  }
+
+  .nav-link:hover,
+  .nav-link[aria-current="true"] {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 6px;
+  }
+
+  .menu-toggle span[aria-hidden] {
+    transition: transform 500ms var(--ease-settle);
+  }
+
+  .menu-toggle[aria-expanded="true"] span:nth-of-type(2) {
+    transform: translateY(4.5px) rotate(45deg);
+  }
+
+  .menu-toggle[aria-expanded="true"] span:nth-of-type(3) {
+    transform: translateY(-4.5px) rotate(-45deg);
+  }
+
+  .menu-panel {
+    opacity: 0;
+    transition: opacity 300ms var(--ease-settle);
+  }
+
+  .menu-panel.is-open {
+    opacity: 1;
+  }
+
+  .menu-item {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 500ms var(--ease-settle), transform 500ms var(--ease-settle);
+  }
+
+  .menu-panel.is-open .menu-item {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Oversized so the image can drift while it stays covered */
+  .parallax-img {
+    position: absolute;
+    top: -20%;
+    left: 0;
+    width: 100%;
+    height: 140%;
+    max-width: none;
+    object-fit: cover;
+    will-change: transform;
+  }
+
+  /* Later stacks paint over earlier ones. site.js pins each panel while the next slides over. */
+  .stack {
+    position: relative;
+  }
+
+  /* The incoming section's shadow on the one below it, faded in on scroll by site.js */
+  .stack + .stack .panel {
+    position: relative;
+  }
+
+  .stack + .stack .panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: var(--slide-shadow, 0);
+    box-shadow: 0 -12px 48px rgba(1, 22, 39, 0.32);
+  }
+
+  .legal h2 {
+    margin-top: 48px;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+}
+
+/* Lenis drives scrolling when it is running */
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .menu-item {
+    transform: none;
+  }
+}
+
+/* Translucent surfaces turn solid for people who ask for less transparency or more contrast */
+@media (prefers-reduced-transparency: reduce) {
+  .site-header.is-solid {
+    background: var(--surface);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  .hero-band {
+    background: var(--brand);
+  }
+}
+
+@media (prefers-contrast: more) {
+  .site-header.is-solid {
+    background: var(--surface);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .hero-band {
+    background: var(--brand);
+    border-top: 1px solid var(--on-brand);
+  }
+}
+
+@media print {
+  .site-header,
+  .skip-link {
+    display: none;
+  }
+
+  .panel,
+  .panel * {
+    position: static !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  .stack + .stack .panel::before {
+    display: none;
+  }
+}

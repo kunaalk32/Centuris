@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+<title>{{brand}} | Private credit in business purpose residential loans</title>
+<meta name="description" content="{{brand}} is a private credit manager investing in short duration business purpose residential loans. Information for institutional and accredited investors.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{brand}}">
+<meta property="og:description" content="A private credit manager investing in short duration business purpose residential loans.">
+<meta property="og:image" content="{{heroImage}}">
+<script type="application/json" id="site-config">{{json}}</script>
+</head>
+<body class="bg-surface font-sans text-body text-ink antialiased">
+{{> header}}
+<main id="main">
+
+  <!-- Hero -->
+  <div class="stack" id="top">
+    <section class="panel on-dark relative flex min-h-svh flex-col overflow-hidden bg-brand text-on-brand" data-hero>
+      <img class="parallax-img object-[30%_50%] md:object-left" src="{{heroImage}}" alt="" fetchpriority="high" data-parallax>
+      <div class="absolute inset-0 bg-brand/50" aria-hidden="true"></div>
+      <div class="relative mx-auto w-full max-w-site flex-1 px-6 pt-32 pb-12 md:pt-40">
+        <h1 class="max-w-4xl text-h1 font-light md:text-display">Short duration residential credit</h1>
+        <p class="mt-6 max-w-2xl">{{brand}} is a private credit manager investing primarily in business purpose loans on one to four unit residential properties.</p>
+        <a class="btn mt-12" href="#access">Request data room access</a>
+      </div>
+      <div class="hero-band relative bg-brand/90">
+        <div class="mx-auto w-full max-w-site px-6 py-8">
+          <dl class="stat-row tabular grid grid-cols-2 md:grid-cols-4">
+            <div class="flex flex-col-reverse justify-end gap-2">
+              <dt class="text-small text-on-brand-muted">Equity under management</dt>
+              <dd class="text-figure" data-count="0">{{facts.equityUnderManagement}}</dd>
+            </div>
+            <div class="flex flex-col-reverse justify-end gap-2">
+              <dt class="text-small text-on-brand-muted">Inception</dt>
+              <dd class="text-figure" data-count="2000">{{facts.inceptionYear}}</dd>
+            </div>
+            <div class="flex flex-col-reverse justify-end gap-2">
+              <dt class="text-small text-on-brand-muted">Principal losses since inception</dt>
+              <dd class="text-figure" data-count="0">{{facts.principalLosses}}</dd>
+            </div>
+            <div class="flex flex-col-reverse justify-end gap-2">
+              <dt class="text-small text-on-brand-muted">States</dt>
+              <dd class="text-figure" data-count="0">{{facts.states}}</dd>
+            </div>
+          </dl>
+          <p class="mt-6 max-w-3xl text-fine text-on-brand-muted">As of {{asOf}}. Principal losses are realized losses since inception across all vehicles. Past performance does not guarantee future results. <a class="link whitespace-nowrap" href="#disclosures">Read the disclosures</a></p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Strategy -->
+  <div class="stack" id="strategy">
+    <section class="panel bg-surface">
+      <div class="mx-auto max-w-site px-6 pt-24 pb-48">
+        <h2 class="max-w-4xl text-h1 font-light md:text-display">Direct access to origination</h2>
+        <p class="mt-12 max-w-2xl">Our loans come through programmatic flow from a national origination platform affiliated with the manager. We check each one against our own credit criteria before we buy it.</p>
+
+        <div class="mt-24 grid gap-12">
+          <article class="grid gap-4 border-t border-line pt-6 lg:grid-cols-12 lg:gap-6">
+            <h3 class="text-h3 font-medium lg:col-span-4">What we buy</h3>
+            <div class="lg:col-span-8">
+              <p class="text-ink-muted">Primarily first lien, business purpose loans to experienced investors who renovate, build or hold one to four unit homes before selling or refinancing. The portfolio also includes some properties with more units.</p>
+              <dl class="tabular mt-6">
+                <div class="flex items-baseline justify-between gap-6 border-t border-line py-2">
+                  <dt class="text-small text-ink-muted">Typical loan life</dt>
+                  <dd>{{facts.typicalLoanMonths}} months</dd>
+                </div>
+                <div class="flex items-baseline justify-between gap-6 border-t border-line py-2">
+                  <dt class="text-small text-ink-muted">Target loan to value, as is and after repair</dt>
+                  <dd class="shrink-0">Below {{facts.targetLtvFigure}}</dd>
+                </div>
+                <div class="flex items-baseline justify-between gap-6 border-t border-line py-2">
+                  <dt class="text-small text-ink-muted">Maximum loan to value</dt>
+                  <dd>{{facts.maxLtv}}</dd>
+                </div>
+                <div class="flex items-baseline justify-between gap-6 border-t border-line py-2">
+                  <dt class="text-small text-ink-muted">Target loan to cost</dt>
+                  <dd>{{facts.targetLtc}}</dd>
+                </div>
+                <div class="flex items-baseline justify-between gap-6 border-t border-line py-2">
+                  <dt class="text-small text-ink-muted">States</dt>
+                  <dd>{{facts.states}}</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+          <article class="grid gap-4 border-t border-line pt-6 lg:grid-cols-12 lg:gap-6">
+            <h3 class="text-h3 font-medium lg:col-span-4">Why small residential</h3>
+            <p class="text-ink-muted lg:col-span-8">Most single-family homes are financed with long-term, fixed-rate mortgages, making the asset class less sensitive to changes in interest rates than commercial real estate. This helps support the stability of our collateral. The smaller size of individual properties also allows us to diversify across a larger number of loans, reducing exposure to any single borrower or property.</p>
+          </article>
+          <article class="grid gap-4 border-t border-line pt-6 lg:grid-cols-12 lg:gap-6">
+            <h3 class="text-h3 font-medium lg:col-span-4">Risk controls</h3>
+            <p class="text-ink-muted lg:col-span-8">Every loan must meet our limits on loan to value, loan to cost, geography and borrower experience. Construction draws are released only after third party inspection, and past due loans follow a defined workout process. We use leverage only at the fund level.</p>
+          </article>
+        </div>
+
+        <div class="mt-24">
+          <h3 class="text-h2 font-normal">Two funds, one open to new capital</h3>
+          <div class="mt-6 overflow-x-auto">
+            <table class="w-full border-collapse text-left">
+              <thead class="text-small text-ink-muted">
+                <tr class="border-b border-line">
+                  <th scope="col" class="py-4 pr-6 font-normal">Fund</th>
+                  <th scope="col" class="py-4 pr-6 font-normal">Position</th>
+                  <th scope="col" class="py-4 font-normal">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-line align-top">
+                  <th scope="row" class="py-6 pr-6 font-medium">BP Mezzanine Opportunity Fund</th>
+                  <td class="py-6 pr-6 text-ink-muted"><span class="limit-mark" aria-hidden="true"></span>Subordinate B notes</td>
+                  <td class="py-6 text-ink-muted">Closed to new capital</td>
+                </tr>
+                <tr class="border-b border-line align-top">
+                  <th scope="row" class="py-6 pr-6 font-medium">BP Liquid Cash Flow Fund</th>
+                  <td class="py-6 pr-6 text-ink-muted"><span class="limit-mark" aria-hidden="true"></span>Whole loans, financed with a warehouse facility</td>
+                  <td class="py-6 text-ink-muted">Open to new capital</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-6 max-w-2xl text-small text-ink-muted">Both funds are offered under Rule 506(c) of Regulation D, to accredited investors whose status we verify. Fees, terms, risk factors and conflicts of interest are in the offering documents. <a class="link" href="#access">Request data room access</a></p>
+        </div>
+
+        <figure class="mt-24 grid gap-4 border-t border-line pt-6 lg:grid-cols-12 lg:gap-6">
+          <figcaption class="text-h3 font-medium lg:col-span-4">Loan to value policy</figcaption>
+          <div class="lg:col-span-6">
+            <div class="relative pt-16" role="img" aria-label="A bar representing the full value of a home. The target loan is below {{facts.targetLtvFigure}} of value and the maximum is {{facts.maxLtv}}.">
+              <p class="absolute top-0 pr-2 text-right text-small text-camel-text" style="right: 30%">Target<br>below {{facts.targetLtvFigure}}</p>
+              <p class="absolute top-0 pl-2 text-small" style="left: 75%">Maximum<br>{{facts.maxLtv}}</p>
+              <div class="flex h-12">
+                <span class="bg-brand" style="width: 70%"></span>
+                <span class="bg-sand" style="width: 5%"></span>
+                <span class="bg-surface-sunk" style="width: 25%"></span>
+              </div>
+              <span class="limit-line bg-camel" style="left: 70%"></span>
+              <span class="limit-line bg-brand" style="left: 75%"></span>
+            </div>
+            <div class="mt-2 flex justify-between gap-4 text-small text-ink-muted">
+              <span>Loan</span>
+              <span>Value above the loan</span>
+            </div>
+            <p class="mt-4 text-small text-ink-muted">Applies to both as is and after repair value. This shows lending policy, not portfolio data.</p>
+          </div>
+        </figure>
+      </div>
+    </section>
+  </div>
+
+  <!-- Team -->
+  <div class="stack" id="team">
+    <section class="panel bg-surface-sunk">
+      <div class="mx-auto max-w-site px-6 py-24">
+        <h2 class="max-w-3xl text-h1 font-light">The team</h2>
+
+        <div class="mt-24 grid gap-12 md:grid-cols-2 md:gap-6">
+          <article class="border-t border-line pt-6">
+            <h3 class="text-h3 font-medium">Charles McKinney</h3>
+            <p class="mt-1 text-small text-ink-muted"><span class="tbd">[Title]</span></p>
+            <p class="mt-4 text-ink-muted"><span class="tbd">[Bio: years in residential credit or real estate finance, prior firms and roles, and responsibilities at {{brand}}. Two to four sentences.]</span></p>
+          </article>
+          <article class="border-t border-line pt-6">
+            <h3 class="text-h3 font-medium">Kunaal Kumar</h3>
+            <p class="mt-1 text-small text-ink-muted"><span class="tbd">[Title]</span></p>
+            <p class="mt-4 text-ink-muted"><span class="tbd">[Bio: years in residential credit or real estate finance, prior firms and roles, and responsibilities at {{brand}}. Two to four sentences.]</span></p>
+          </article>
+        </div>
+
+        <p class="mt-12 max-w-2xl text-ink-muted">Outside firms handle fund administration, audit and legal work, so investors can check our reporting against records we do not control.</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- Investor access and footer -->
+  <div class="stack" id="access">
+    <section class="panel on-dark bg-brand text-on-brand">
+      <div class="mx-auto grid max-w-site gap-12 px-6 py-24 lg:grid-cols-12 lg:gap-6">
+        <div class="lg:col-span-5">
+          <h2 class="text-h1 font-light">Request data room access</h2>
+          <p class="mt-6 text-on-brand-muted">Our Data Room holds the offering documents, due diligence questionnaire, audited financials, performance history and portfolio data. We send access after reviewing each request.</p>
+          <dl class="mt-12 grid gap-6 text-small">
+            <div>
+              <dt class="text-on-brand-muted">Investor relations</dt>
+              <dd class="mt-1"><span class="tbd">{{email}}</span></dd>
+            </div>
+            <div>
+              <dt class="text-on-brand-muted">Existing investors</dt>
+              <dd class="mt-1"><a class="link" href="{{portalUrl}}">Investor portal login</a></dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="lg:col-span-6 lg:col-start-7">
+          <form class="space-y-6" novalidate data-access-form>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <label for="f-name" class="text-small">Full name</label>
+                <input id="f-name" name="fullname" class="field mt-2" autocomplete="name" required>
+                <p class="field-error mt-2" hidden></p>
+              </div>
+              <div>
+                <label for="f-email" class="text-small">Work email</label>
+                <input id="f-email" name="email" type="email" class="field mt-2" autocomplete="email" required>
+                <p class="field-error mt-2" hidden></p>
+              </div>
+              <div>
+                <label for="f-firm" class="text-small">Firm</label>
+                <input id="f-firm" name="firm" class="field mt-2" autocomplete="organization" required>
+                <p class="field-error mt-2" hidden></p>
+              </div>
+              <div>
+                <label for="f-role" class="text-small">Role</label>
+                <input id="f-role" name="role" class="field mt-2" autocomplete="organization-title" required>
+                <p class="field-error mt-2" hidden></p>
+              </div>
+            </div>
+
+            <div>
+              <label for="f-allocation" class="text-small">Expected allocation</label>
+              <select id="f-allocation" name="allocation" class="field mt-2" required>
+                <option value="">Select a range</option>
+                <option>Under $1M</option>
+                <option>$1M to $5M</option>
+                <option>$5M to $25M</option>
+                <option>Over $25M</option>
+              </select>
+              <p class="field-error mt-2" hidden></p>
+            </div>
+
+            <fieldset>
+              <legend class="sr-only">Investor status</legend>
+              <label class="flex items-center gap-4"><input type="checkbox" name="status" value="Accredited investor" class="h-4 w-4 accent-camel"> I am, or represent, an accredited investor</label>
+              <p class="field-error mt-2" hidden></p>
+            </fieldset>
+
+            <p class="text-small text-on-brand-muted">By submitting, you confirm the information above is accurate. Access is limited to accredited investors, and we verify status before anyone invests. See our <a class="link" href="./privacy.html">privacy policy</a>.</p>
+
+            <div class="flex flex-wrap items-center gap-6">
+              <button type="submit" class="btn">Request data room access</button>
+              <p class="field-error" role="alert" data-form-error hidden></p>
+            </div>
+          </form>
+
+          <div tabindex="-1" data-form-success hidden>
+            <h3 class="text-h2 font-normal">Request received</h3>
+            <p class="mt-4 text-on-brand-muted">We will reply to <span data-success-email></span> after reviewing your request.</p>
+          </div>
+        </div>
+      </div>
+      {{> footer}}
+    </section>
+  </div>
+
+</main>
+</body>
+</html>

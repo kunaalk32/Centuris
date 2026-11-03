@@ -1,0 +1,32 @@
+{
+  "brand": "Centuris Capital",
+  "managerEntity": "[Manager legal entity]",
+  "siteUrl": "https://[domain]",
+  "email": "[investor relations email]",
+  "portalUrl": "https://portal.navfundservices.com/navportalcore/login",
+  "asOf": "September 30, 2026",
+  "year": "2026",
+  "facts": {
+    "equityUnderManagement": "$85M+",
+    "inceptionYear": "2022",
+    "principalLosses": "$0",
+    "loansFunded": "[TBD]",
+    "loansRepaid": "[TBD]",
+    "typicalLoanMonths": "12 to 18",
+    "targetLtvFigure": "70%",
+    "maxLtv": "75%",
+    "targetLtc": "80%",
+    "states": "45"
+  },
+  "heroImage": "https://images.unsplash.com/photo-1518966870461-3b4d5b868fdd?auto=format&fit=crop&w=2400&q=70",
+  "activecampaign": {
+    "account": "",
+    "formId": "",
+    "fields": {
+      "firm": "",
+      "role": "",
+      "allocation": "",
+      "status": ""
+    }
+  }
+}

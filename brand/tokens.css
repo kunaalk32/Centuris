@@ -1,0 +1,59 @@
+/* Centuris Capital — generated from tokens.json */
+:root {
+  --surface: #F6F3EC;
+  --surface-raised: #FFFFFF;
+  --surface-sunk: #ECE6DA;
+  --ink: #011627;
+  --ink-muted: #4A5562;
+  --brand: #011627;
+  --on-brand: #F6F3EC;
+  --on-brand-muted: #A9B3BF;
+  --camel: #B4925E;
+  --camel-text: #6E5530;
+  --on-camel: #011627;
+  --sand: #E3D8C3;
+  --line: #D9D1C2;
+  --positive: #2E6A4E;
+  --negative: #9B3328;
+  --focus: #6E5530;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-12: 48px;
+  --space-24: 96px;
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --shadow-none: none;
+  --shadow-raised: 0 1px 2px rgba(1, 22, 39, 0.06);
+  --shadow-overlay: 0 8px 24px rgba(1, 22, 39, 0.12), 0 2px 6px rgba(1, 22, 39, 0.08);
+  --shadow-modal: 0 24px 64px rgba(1, 22, 39, 0.24);
+  --font-sans: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+[data-theme="dark"] {
+  --surface: #011627;
+  --surface-raised: #0A2338;
+  --surface-sunk: #000E1A;
+  --ink: #EFEAE0;
+  --ink-muted: #A7AFBA;
+  --brand: #16304A;
+  --on-brand: #F6F3EC;
+  --on-brand-muted: #A9B3BF;
+  --camel: #B4925E;
+  --camel-text: #C9A876;
+  --on-camel: #011627;
+  --sand: #3A3326;
+  --line: #1F3550;
+  --positive: #6DB592;
+  --negative: #E08A7E;
+  --focus: #C9A876;
+}
+.text-display { font-family: var(--font-sans); font-size: 64px; line-height: 68px; font-weight: 300; }
+.text-h1 { font-family: var(--font-sans); font-size: 44px; line-height: 50px; font-weight: 300; }
+.text-h2 { font-family: var(--font-sans); font-size: 32px; line-height: 38px; font-weight: 400; }
+.text-figure { font-family: var(--font-sans); font-size: 40px; line-height: 44px; font-weight: 400; }
+.text-h3 { font-family: var(--font-sans); font-size: 20px; line-height: 28px; font-weight: 500; }
+.text-body { font-family: var(--font-sans); font-size: 17px; line-height: 28px; font-weight: 400; }
+.text-small { font-family: var(--font-sans); font-size: 14px; line-height: 22px; font-weight: 400; }
+.tabular { font-variant-numeric: tabular-nums; }
