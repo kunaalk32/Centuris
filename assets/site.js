@@ -92,6 +92,19 @@
       });
     });
 
+    // Hero figures fade, rise and count up on load from their data-count value, one after another.
+    // The HTML holds the final text.
+    document.querySelectorAll("[data-count]").forEach((el, i) => {
+      const [, before, value, after] = el.textContent.match(/^(\D*)(\d+)(.*)$/);
+      const counter = { n: Number(el.dataset.count) };
+      const render = () => (el.textContent = before + Math.round(counter.n) + after);
+      el.setAttribute("aria-label", el.textContent);
+      render();
+      const delay = i * 0.1;
+      gsap.from(el, { autoAlpha: 0, y: 16, duration: 0.8, delay, ease: "power3.out" });
+      gsap.to(counter, { n: Number(value), duration: 1.6, delay, ease: "power3.out", onUpdate: render });
+    });
+
     // Images drift within their spare height, centred when the panel reaches the top
     document.querySelectorAll("[data-parallax]").forEach((img) => {
       const drift = () => ((img.offsetHeight - img.parentElement.offsetHeight) / 2) * 0.9;

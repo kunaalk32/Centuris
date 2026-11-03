@@ -34,7 +34,6 @@
     <nav aria-label="Primary" class="hidden lg:block">
       <ul class="flex items-center gap-8 text-small">
         <li><a class="nav-link" href="./#strategy" data-nav="strategy">Strategy</a></li>
-        <li><a class="nav-link" href="./#track-record" data-nav="track-record">Track record</a></li>
         <li><a class="nav-link" href="./#firm" data-nav="firm">Firm</a></li>
       </ul>
     </nav>
@@ -42,7 +41,7 @@
       <a class="nav-link text-small" href="https://portal.navfundservices.com/navportalcore/login">Investor login</a>
       <a class="btn-quiet" href="./#access">Request materials</a>
     </div>
-    <button type="button" class="menu-toggle relative z-50 grid h-10 w-10 cursor-pointer place-content-center gap-2 lg:hidden" aria-expanded="false" aria-controls="menu" data-menu-toggle>
+    <button type="button" class="menu-toggle relative z-50 grid h-11 w-11 cursor-pointer place-content-center gap-2 lg:hidden" aria-expanded="false" aria-controls="menu" data-menu-toggle>
       <span class="sr-only">Menu</span>
       <span class="block h-px w-6 bg-current" aria-hidden="true"></span>
       <span class="block h-px w-6 bg-current" aria-hidden="true"></span>
@@ -54,7 +53,6 @@
   <nav aria-label="Mobile" class="flex h-full flex-col justify-between px-6 pt-24 pb-12">
     <ul class="flex flex-col gap-4 text-h1 font-light">
       <li class="menu-item"><a class="nav-link" href="./#strategy">Strategy</a></li>
-      <li class="menu-item"><a class="nav-link" href="./#track-record">Track record</a></li>
       <li class="menu-item"><a class="nav-link" href="./#firm">Firm</a></li>
     </ul>
     <div class="menu-item flex flex-col items-start gap-6">
@@ -68,13 +66,36 @@
 
   <!-- Hero -->
   <div class="stack" id="top">
-    <section class="panel on-dark relative min-h-svh overflow-hidden bg-brand text-on-brand" data-hero>
+    <section class="panel on-dark relative flex min-h-svh flex-col overflow-hidden bg-brand text-on-brand" data-hero>
       <img class="parallax-img object-[30%_50%] md:object-left" src="https://images.unsplash.com/photo-1518966870461-3b4d5b868fdd?auto=format&fit=crop&w=2400&q=70" alt="" fetchpriority="high" data-parallax>
       <div class="absolute inset-0 bg-brand/50" aria-hidden="true"></div>
-      <div class="relative mx-auto w-full max-w-site px-6 pt-40 pb-24">
+      <div class="relative mx-auto w-full max-w-site flex-1 px-6 pt-32 pb-12 md:pt-40">
         <h1 class="max-w-4xl text-h1 font-light md:text-display">Short duration residential credit</h1>
         <p class="mt-6 max-w-2xl">Centuris Capital is a private credit manager investing primarily in business purpose loans on one to four unit residential properties.</p>
         <a class="btn mt-12" href="#access">Request materials</a>
+      </div>
+      <div class="hero-band relative bg-brand/90">
+        <div class="mx-auto w-full max-w-site px-6 py-8">
+          <dl class="stat-row tabular grid grid-cols-2 md:grid-cols-4">
+            <div class="flex flex-col-reverse justify-end gap-2">
+              <dt class="text-small text-on-brand-muted">Equity under management</dt>
+              <dd class="text-figure" data-count="0">$85M+</dd>
+            </div>
+            <div class="flex flex-col-reverse justify-end gap-2">
+              <dt class="text-small text-on-brand-muted">Inception</dt>
+              <dd class="text-figure" data-count="2000">2022</dd>
+            </div>
+            <div class="flex flex-col-reverse justify-end gap-2">
+              <dt class="text-small text-on-brand-muted">Principal losses since inception</dt>
+              <dd class="text-figure" data-count="0">$0</dd>
+            </div>
+            <div class="flex flex-col-reverse justify-end gap-2">
+              <dt class="text-small text-on-brand-muted">States</dt>
+              <dd class="text-figure" data-count="0">45</dd>
+            </div>
+          </dl>
+          <p class="mt-6 max-w-3xl text-small text-on-brand-muted">As of September 30, 2026. Principal losses are realized losses since inception across all vehicles. Past performance does not guarantee future results. <a class="link" href="#disclosures">Read the disclosures</a></p>
+        </div>
       </div>
     </section>
   </div>
@@ -83,8 +104,8 @@
   <div class="stack" id="strategy">
     <section class="panel bg-surface">
       <div class="mx-auto max-w-site px-6 pt-24 pb-48">
-        <h2 class="max-w-4xl text-h1 font-light md:text-display">Deal flow from an affiliated national originator</h2>
-        <p class="mt-12 max-w-2xl">Our loans come through programmatic flow from a national origination platform affiliated with the manager. We check each one against our own credit criteria before we buy it. The offering documents describe the affiliation and how we manage the conflicts it creates.</p>
+        <h2 class="max-w-4xl text-h1 font-light md:text-display">Direct access to origination</h2>
+        <p class="mt-12 max-w-2xl">Our loans come through programmatic flow from a national origination platform affiliated with the manager. We check each one against our own credit criteria before we buy it.</p>
 
         <div class="mt-24 grid gap-12">
           <article class="grid gap-4 border-t border-line pt-6 lg:grid-cols-12 lg:gap-6">
@@ -144,7 +165,7 @@
                 </tr>
                 <tr class="border-b border-line align-top">
                   <th scope="row" class="py-6 pr-6 font-medium">BP Liquid Cash Flow Fund</th>
-                  <td class="py-6 pr-6 text-ink-muted"><span class="limit-mark" aria-hidden="true"></span>Whole loans, financed in part with a warehouse facility</td>
+                  <td class="py-6 pr-6 text-ink-muted"><span class="limit-mark" aria-hidden="true"></span>Whole loans, financed with a warehouse facility</td>
                   <td class="py-6 text-ink-muted">Open to new capital</td>
                 </tr>
               </tbody>
@@ -178,46 +199,11 @@
     </section>
   </div>
 
-  <!-- Track record -->
-  <div class="stack" id="track-record">
-    <section class="panel on-dark relative flex min-h-svh flex-col overflow-hidden bg-brand text-on-brand">
-      <img class="parallax-img" src="https://images.unsplash.com/photo-1668911494256-becf9fea265b?auto=format&fit=crop&w=2400&q=70" alt="" loading="lazy" data-parallax>
-      <div class="min-h-[40svh] flex-1" aria-hidden="true"></div>
-      <div class="relative bg-brand/90">
-      <div class="mx-auto w-full max-w-site px-6 pt-16 pb-32">
-        <h2 class="max-w-3xl text-h1 font-light">No realized principal losses since inception in 2022</h2>
-
-        <dl class="stat-row tabular mt-12 grid md:grid-cols-4">
-          <div class="flex flex-col-reverse justify-end gap-2">
-            <dt class="text-small text-on-brand-muted">Equity under management</dt>
-            <dd class="text-figure">$85M+</dd>
-          </div>
-          <div class="flex flex-col-reverse justify-end gap-2">
-            <dt class="text-small text-on-brand-muted">Loans funded, by dollars and count</dt>
-            <dd class="text-figure"><span class="tbd">[TBD]</span></dd>
-          </div>
-          <div class="flex flex-col-reverse justify-end gap-2">
-            <dt class="text-small text-on-brand-muted">Loans fully repaid</dt>
-            <dd class="text-figure"><span class="tbd">[TBD]</span></dd>
-          </div>
-          <div class="flex flex-col-reverse justify-end gap-2">
-            <dt class="text-small text-on-brand-muted">Principal losses</dt>
-            <dd class="text-figure">None</dd>
-          </div>
-        </dl>
-
-        <p class="mt-12 max-w-3xl text-small text-on-brand-muted">As of September 30, 2026. Principal losses are realized losses since inception across all vehicles. Past performance does not guarantee future results. <a class="link" href="#disclosures">Read the disclosures</a></p>
-      </div>
-      </div>
-    </section>
-  </div>
-
   <!-- Firm -->
   <div class="stack" id="firm">
     <section class="panel bg-surface-sunk">
       <div class="mx-auto max-w-site px-6 py-24">
         <h2 class="max-w-3xl text-h1 font-light">Principals and service providers</h2>
-        <p class="mt-6 max-w-2xl text-ink-muted">Centuris Capital was formerly Bozeman Capital Partners. Our funds keep their original names.</p>
 
         <div class="mt-24 grid gap-12 md:grid-cols-2 md:gap-6">
           <article class="border-t border-line pt-6">
@@ -347,7 +333,6 @@
       <footer class="border-t border-line text-small text-on-brand-muted">
   <div class="mx-auto max-w-site px-6 py-12">
     <img class="w-[180px]" src="./assets/logos/centuris-wordmark-on-dark.svg" alt="Centuris Capital" width="180">
-    <p class="mt-6">Centuris Capital was formerly Bozeman Capital Partners.</p>
 
     <div id="disclosures" class="mt-12 grid gap-6 border-t border-line pt-24 md:grid-cols-2">
       <p>This website is not an offering or the solicitation of an offer to purchase an interest in <span class="tbd">[Manager legal entity]</span>, BP Mezzanine Opportunity Fund LLC, BP Liquid Cash Flow Fund or any other fund. Any such offer or solicitation will be made only to qualified investors by means of confidential offering documents, and only in jurisdictions where permitted by law.</p>
