@@ -1,8 +1,8 @@
 {
   "brand": "Centuris Capital",
-  "managerEntity": "[Manager legal entity]",
-  "siteUrl": "https://[domain]",
-  "email": "[investor relations email]",
+  "managerEntity": "Centuris Capital LLC",
+  "siteUrl": "https://centuriscapital.com",
+  "email": "info@centuriscapital.com",
   "portalUrl": "https://portal.navfundservices.com/navportalcore/login",
   "asOf": "September 30, 2026",
   "year": "2026",
