@@ -43,7 +43,7 @@ Text pairings (all tested for contrast; ratios in each token's note):
 - Camel itself is too light to read on ivory (2.6:1). On light surfaces it is decoration only: rules, fills, the cover blocks. Any camel-coloured words there use `camel-text`. On Ink Black, camel reads well (6.3:1) and is the logo-accent colour.
 - Never white on camel (2.9:1); use Ink Black.
 - About 70% ivory surfaces, 20% Ink Black, 5% camel. One camel highlight per view: the main action carries it, so secondary controls such as the header button stay quiet outlines.
-- Sections alternate between Ink Black (`brand`) and the ivories, in an uneven rhythm: two dark anchors (hero, investor access plus footer) with `surface` and `surface-sunk` sections between them. Avoid strict dark/light flipping on every section, which reads as stripes.
+- Sections alternate between Ink Black (`brand`) and the ivories, in an uneven rhythm: dark anchors (hero, opportunities, investor access plus footer) with `surface` and `surface-sunk` sections between them. Avoid strict dark/light flipping on every section, which reads as stripes.
 - `positive` and `negative` appear only next to performance figures and always with a sign (+/–), so meaning never depends on colour alone.
 - Dark theme (investor portal, slides): the page becomes Ink Black, text ivory, camel works as text directly. The marketing site is light-first.
 
@@ -86,9 +86,10 @@ The website does not mention the former name.
 | # | Section | Background |
 | --- | --- | --- |
 | 1 | Hero: "Short duration residential credit" as H1 in ivory on open sky, one sentence on the strategy, one camel button ("Request data room access"), then the stat row on a band along the bottom | Ink Black, full photo |
-| 2 | Strategy: deal flow from the affiliated originator first, then what we buy, risk controls, a small collateral bar, and the funds table | `surface` #F6F3EC |
-| 3 | Team: principals, one sentence on outside administration, audit and legal work | `surface-sunk` #ECE6DA |
-| 4 | Investor access (accredited-investor verification for 506(c) offerings) and footer | Ink Black |
+| 2 | Strategy: deal flow from the affiliated originator first, then what we buy, risk controls, and a small collateral bar last | `surface` #F6F3EC |
+| 3 | Opportunities: funds table and the Rule 506(c) note | Ink Black |
+| 4 | Team: principals, one sentence on outside administration, audit and legal work | `surface-sunk` #ECE6DA |
+| 5 | Investor access (accredited-investor verification for 506(c) offerings) and footer | Ink Black |
 
 ## Using this system
 
