@@ -150,6 +150,15 @@
     margin-left: -1px;
   }
 
+  /* Capital stack bars, on Ink Black. The fund's own position is camel. */
+  .stack-senior {
+    background: color-mix(in srgb, var(--on-brand) 32%, var(--brand));
+  }
+
+  .stack-equity {
+    background: color-mix(in srgb, var(--on-brand) 12%, var(--brand));
+  }
+
   .link {
     text-decoration: underline;
     text-decoration-thickness: 1px;
