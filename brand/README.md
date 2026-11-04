@@ -63,7 +63,7 @@ Text pairings (all tested for contrast; ratios in each token's note):
 - Elevation has four levels and almost everything sits at level 0 (`shadow-none`): sections, cards, tables, panels. Level 1 (`shadow-raised`) is only the sticky nav after scroll; level 2 (`shadow-overlay`) is for things floating over the page (menus, popovers, tooltips); level 3 (`shadow-modal`) is for dialogs, over an Ink Black scrim. Cards are flat by default; reach for a border, the sand tint or spacing first. A card that genuinely floats (for example a stat card overlapping the edge of the hero) may use `shadow-overlay`, sparingly: one or two per page. In the dark theme, shadows barely show, so floating layers also step up to `surface-raised`.
 - Use a 12-column grid with a 1200px max width, `space-6` gutters and `space-24` between sections.
 - Use the stat row pattern for key numbers: three or four figures in the Geist `figure` style, each with a `small` label underneath, divided by vertical hairlines. Use it once per page, in the hero, on a 90% Ink Black band with the as-of date and disclosure link directly beneath. Supporting facts elsewhere are a smaller list, not a second stat row.
-- Signature: a thin marked line wherever a limit or position is stated, such as the collateral bar and the funds table. Use it nowhere else. Camel is decoration here, and any words beside it use `camel-text`.
+- Signature: a thin marked line wherever a limit or position is stated, such as the collateral bar. Use it nowhere else. Camel is decoration here, and any words beside it use `camel-text`.
 
 ## Imagery
 
@@ -87,7 +87,7 @@ The website does not mention the former name.
 | --- | --- | --- |
 | 1 | Hero: "Short duration residential credit" as H1 in ivory on open sky, one sentence on the strategy, one camel button ("Request data room access"), then the stat row on a band along the bottom | Ink Black, full photo |
 | 2 | Strategy: deal flow from the affiliated originator first, then what we buy, risk controls, and a small collateral bar last | `surface` #F6F3EC |
-| 3 | Opportunities: funds table and the Rule 506(c) note | Ink Black |
+| 3 | Opportunities: expandable fund rows showing name and status, opening to strategy, target net return, inception, distributions and lockup, then the Rule 506(c) note | Ink Black |
 | 4 | Team: principals, one sentence on outside administration, audit and legal work | `surface-sunk` #ECE6DA |
 | 5 | Investor access (accredited-investor verification for 506(c) offerings) and footer | Ink Black |
 

@@ -62,22 +62,24 @@
     });
   }
 
-  // Team bios start collapsed here, so they stay readable if this script never runs.
+  // Team bios and fund rows start collapsed here, so they stay readable if this script never runs.
   // Toggling one changes the panel's height, so the pins are measured again once it settles.
-  // If the shorter panel leaves the toggle under the next section, return to the top of the team.
+  // If the shorter panel leaves the toggle under the next section, return to the top of that section.
   let bioSettle;
+  const bioToggles = document.querySelectorAll("[data-bio-toggle]");
   // ScrollTrigger locks a pinned panel and its spacer at a measured height.
-  // Those heights follow the content, so the section and the next one move with the bio.
-  const teamPanel = motionOk ? document.querySelector("[data-bio-toggle]")?.closest(".panel") : null;
-  if (teamPanel) {
-    new ResizeObserver(() => {
-      const height = `${teamPanel.firstElementChild.offsetHeight}px`;
-      teamPanel.style.height = height;
-      teamPanel.style.maxHeight = height;
-      if (teamPanel.parentElement.classList.contains("pin-spacer")) teamPanel.parentElement.style.height = height;
-    }).observe(teamPanel.firstElementChild);
+  // Those heights follow the content, so the section and the next one move with the toggle.
+  if (motionOk) {
+    new Set([...bioToggles].map((button) => button.closest(".panel"))).forEach((panel) => {
+      new ResizeObserver(() => {
+        const height = `${panel.firstElementChild.offsetHeight}px`;
+        panel.style.height = height;
+        panel.style.maxHeight = height;
+        if (panel.parentElement.classList.contains("pin-spacer")) panel.parentElement.style.height = height;
+      }).observe(panel.firstElementChild);
+    });
   }
-  document.querySelectorAll("[data-bio-toggle]").forEach((button) => {
+  bioToggles.forEach((button) => {
     const bio = document.getElementById(button.getAttribute("aria-controls"));
     const stack = button.closest(".stack");
     const nextPanel = stack.nextElementSibling?.querySelector(".panel");

@@ -125,28 +125,84 @@
     <section class="panel on-dark bg-brand text-on-brand">
       <div class="mx-auto max-w-site px-6 py-24">
         <h2 class="max-w-3xl text-h1 font-light">Opportunities</h2>
-        <div class="mt-12 overflow-x-auto">
-          <table class="w-full border-collapse text-left">
-            <thead class="text-small text-on-brand-muted">
-              <tr class="border-b border-line">
-                <th scope="col" class="py-4 pr-6 font-normal">Fund</th>
-                <th scope="col" class="py-4 pr-6 font-normal">Position</th>
-                <th scope="col" class="py-4 font-normal">Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="border-b border-line align-top">
-                <th scope="row" class="py-6 pr-6 font-medium">BP Mezzanine Opportunity Fund</th>
-                <td class="py-6 pr-6 text-on-brand-muted"><span class="limit-mark" aria-hidden="true"></span>Subordinate B notes</td>
-                <td class="py-6 text-on-brand-muted">Closed to new capital</td>
-              </tr>
-              <tr class="border-b border-line align-top">
-                <th scope="row" class="py-6 pr-6 font-medium">BP Liquid Cash Flow Fund</th>
-                <td class="py-6 pr-6 text-on-brand-muted"><span class="limit-mark" aria-hidden="true"></span>Whole loans, financed with a warehouse facility</td>
-                <td class="py-6 text-on-brand-muted">Open to new capital</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="mt-12 border-t border-line">
+          <article class="border-b border-line">
+            <h3>
+              <button class="bio-toggle fund-toggle" type="button" aria-expanded="true" aria-controls="fund-bpmof" data-bio-toggle>
+                <span class="flex grow flex-col gap-1 md:flex-row md:items-baseline md:justify-between md:gap-6">
+                  <span class="text-h3 font-medium">BP Mezzanine Opportunity Fund</span>
+                  <span class="text-on-brand-muted">Closed to new capital</span>
+                </span>
+                <span class="bio-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="bio fund-panel" id="fund-bpmof"><div>
+              <div class="pt-6 pb-12">
+                <dl class="grid gap-6 md:grid-cols-12">
+                  <div class="md:col-span-12">
+                    <dt class="text-small text-on-brand-muted">Strategy</dt>
+                    <dd class="mt-1">Subordinate B notes on first lien, business purpose residential loans</dd>
+                  </div>
+                  <div class="md:col-span-3">
+                    <dt class="text-small text-on-brand-muted">Target net return</dt>
+                    <dd class="mt-1">18%<sup>1</sup></dd>
+                  </div>
+                  <div class="md:col-span-3">
+                    <dt class="text-small text-on-brand-muted">Inception</dt>
+                    <dd class="mt-1">January 2022</dd>
+                  </div>
+                  <div class="md:col-span-3">
+                    <dt class="text-small text-on-brand-muted">Distributions</dt>
+                    <dd class="mt-1">Monthly</dd>
+                  </div>
+                  <div class="md:col-span-3">
+                    <dt class="text-small text-on-brand-muted">Lockup</dt>
+                    <dd class="mt-1">1 year</dd>
+                  </div>
+                </dl>
+                <p class="mt-4 text-small text-on-brand-muted"><sup>1</sup> Target returns are not guaranteed and actual results may differ. See the offering documents. <a class="link" href="#disclosures">Read the disclosures</a></p>
+              </div>
+            </div></div>
+          </article>
+          <article class="border-b border-line">
+            <h3>
+              <button class="bio-toggle fund-toggle" type="button" aria-expanded="true" aria-controls="fund-bplcff" data-bio-toggle>
+                <span class="flex grow flex-col gap-1 md:flex-row md:items-baseline md:justify-between md:gap-6">
+                  <span class="text-h3 font-medium">BP Liquid Cash Flow Fund</span>
+                  <span class="text-on-brand-muted">Open</span>
+                </span>
+                <span class="bio-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="bio fund-panel" id="fund-bplcff"><div>
+              <div class="pt-6 pb-12">
+                <dl class="grid gap-6 md:grid-cols-12">
+                  <div class="md:col-span-12">
+                    <dt class="text-small text-on-brand-muted">Strategy</dt>
+                    <dd class="mt-1">Whole first lien, business purpose residential loans, financed with a warehouse facility</dd>
+                  </div>
+                  <div class="md:col-span-3">
+                    <dt class="text-small text-on-brand-muted">Target net return</dt>
+                    <dd class="mt-1">12% to 15%<sup>1,2</sup></dd>
+                  </div>
+                  <div class="md:col-span-3">
+                    <dt class="text-small text-on-brand-muted">Inception</dt>
+                    <dd class="mt-1">December 2025</dd>
+                  </div>
+                  <div class="md:col-span-3">
+                    <dt class="text-small text-on-brand-muted">Distributions</dt>
+                    <dd class="mt-1">Monthly</dd>
+                  </div>
+                  <div class="md:col-span-3">
+                    <dt class="text-small text-on-brand-muted">Lockup</dt>
+                    <dd class="mt-1">6 months to 1 year<sup>2</sup></dd>
+                  </div>
+                </dl>
+                <p class="mt-4 text-small text-on-brand-muted"><sup>1</sup> Target returns are not guaranteed and actual results may differ. See the offering documents. <a class="link" href="#disclosures">Read the disclosures</a></p>
+                <p class="mt-1 text-small text-on-brand-muted"><sup>2</sup> Target return and lockup depend on share class.</p>
+              </div>
+            </div></div>
+          </article>
         </div>
         <p class="mt-6 max-w-2xl text-small text-on-brand-muted">Funds are offered under Rule 506(c) of Regulation D, to accredited investors whose status we verify. Fees, terms, risk factors and conflicts of interest are in the offering documents. <a class="link" href="#access">Request data room access</a></p>
       </div>

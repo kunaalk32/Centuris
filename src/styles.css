@@ -150,15 +150,6 @@
     margin-left: -1px;
   }
 
-  .limit-mark {
-    display: inline-block;
-    width: 2px;
-    height: 16px;
-    margin-right: 12px;
-    background: var(--camel);
-    vertical-align: -3px;
-  }
-
   .link {
     text-decoration: underline;
     text-decoration-thickness: 1px;
@@ -400,6 +391,42 @@
   .bio.is-closed {
     grid-template-rows: 0fr;
     visibility: hidden;
+  }
+
+  /* Fund rows reach 16px past the column, so the hover fill has room around the text
+     and the panel's overflow does not clip a focus ring */
+  .fund-toggle {
+    width: calc(100% + 32px);
+    margin-inline: -16px;
+    padding: 24px 16px;
+    border-bottom: 0;
+    transition: background-color 300ms var(--ease-settle);
+  }
+
+  .fund-toggle .bio-icon {
+    color: var(--on-brand);
+  }
+
+  .fund-panel {
+    margin-inline: -16px;
+  }
+
+  .fund-panel > div {
+    padding-inline: 16px;
+  }
+
+  @media (hover: hover) {
+    .fund-toggle:hover {
+      background: rgb(246 243 236 / 0.08);
+    }
+
+    .fund-toggle:hover .bio-icon {
+      color: var(--camel);
+    }
+  }
+
+  .fund-toggle:active {
+    background: rgb(246 243 236 / 0.12);
   }
 
   .legal h2 {
