@@ -94,6 +94,27 @@
             <h3 class="text-h3 font-medium lg:col-span-4">Risk controls</h3>
             <p class="text-ink-muted lg:col-span-8">Every loan must meet our limits on loan to value, loan to cost, geography and borrower experience. Construction draws are released only after third party inspection, and past due loans follow a defined workout process.</p>
           </article>
+          <figure class="grid gap-4 border-t border-line pt-6 lg:grid-cols-12 lg:gap-6">
+            <figcaption class="text-h3 font-medium lg:col-span-4">Loan to value policy</figcaption>
+            <div class="lg:col-span-6">
+              <div class="relative pt-16" role="img" aria-label="A bar representing the full value of a home. The target loan is below {{facts.targetLtvFigure}} of value and the maximum is {{facts.maxLtv}}.">
+                <p class="absolute top-0 pr-2 text-right text-small text-camel-text" style="right: 30%">Target<br>below {{facts.targetLtvFigure}}</p>
+                <p class="absolute top-0 pl-2 text-small" style="left: 75%">Maximum<br>{{facts.maxLtv}}</p>
+                <div class="flex h-12">
+                  <span class="bg-brand" style="width: 70%"></span>
+                  <span class="bg-sand" style="width: 5%"></span>
+                  <span class="bg-surface-sunk" style="width: 25%"></span>
+                </div>
+                <span class="limit-line bg-camel" style="left: 70%"></span>
+                <span class="limit-line bg-brand" style="left: 75%"></span>
+              </div>
+              <div class="mt-2 flex justify-between gap-4 text-small text-ink-muted">
+                <span>Loan</span>
+                <span>Value above the loan</span>
+              </div>
+              <p class="mt-4 text-small text-ink-muted">Applies to both as is and after repair value. This shows lending policy, not portfolio data.</p>
+            </div>
+          </figure>
         </div>
 
         <div class="mt-24">
@@ -123,28 +144,6 @@
           </div>
           <p class="mt-6 max-w-2xl text-small text-ink-muted">Both funds are offered under Rule 506(c) of Regulation D, to accredited investors whose status we verify. Fees, terms, risk factors and conflicts of interest are in the offering documents. <a class="link" href="#access">Request data room access</a></p>
         </div>
-
-        <figure class="mt-24 grid gap-4 border-t border-line pt-6 lg:grid-cols-12 lg:gap-6">
-          <figcaption class="text-h3 font-medium lg:col-span-4">Loan to value policy</figcaption>
-          <div class="lg:col-span-6">
-            <div class="relative pt-16" role="img" aria-label="A bar representing the full value of a home. The target loan is below {{facts.targetLtvFigure}} of value and the maximum is {{facts.maxLtv}}.">
-              <p class="absolute top-0 pr-2 text-right text-small text-camel-text" style="right: 30%">Target<br>below {{facts.targetLtvFigure}}</p>
-              <p class="absolute top-0 pl-2 text-small" style="left: 75%">Maximum<br>{{facts.maxLtv}}</p>
-              <div class="flex h-12">
-                <span class="bg-brand" style="width: 70%"></span>
-                <span class="bg-sand" style="width: 5%"></span>
-                <span class="bg-surface-sunk" style="width: 25%"></span>
-              </div>
-              <span class="limit-line bg-camel" style="left: 70%"></span>
-              <span class="limit-line bg-brand" style="left: 75%"></span>
-            </div>
-            <div class="mt-2 flex justify-between gap-4 text-small text-ink-muted">
-              <span>Loan</span>
-              <span>Value above the loan</span>
-            </div>
-            <p class="mt-4 text-small text-ink-muted">Applies to both as is and after repair value. This shows lending policy, not portfolio data.</p>
-          </div>
-        </figure>
       </div>
     </section>
   </div>

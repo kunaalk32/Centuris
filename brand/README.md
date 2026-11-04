@@ -86,7 +86,7 @@ The website does not mention the former name.
 | # | Section | Background |
 | --- | --- | --- |
 | 1 | Hero: "Short duration residential credit" as H1 in ivory on open sky, one sentence on the strategy, one camel button ("Request data room access"), then the stat row on a band along the bottom | Ink Black, full photo |
-| 2 | Strategy: deal flow from the affiliated originator first, then what we buy, risk controls, funds table, and a small collateral bar last | `surface` #F6F3EC |
+| 2 | Strategy: deal flow from the affiliated originator first, then what we buy, risk controls, a small collateral bar, and the funds table | `surface` #F6F3EC |
 | 3 | Team: principals, one sentence on outside administration, audit and legal work | `surface-sunk` #ECE6DA |
 | 4 | Investor access (accredited-investor verification for 506(c) offerings) and footer | Ink Black |
 
