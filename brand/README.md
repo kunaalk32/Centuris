@@ -87,7 +87,7 @@ The website does not mention the former name.
 | --- | --- | --- |
 | 1 | Hero: "Short duration residential credit" as H1 in ivory on open sky, one sentence on the strategy, one camel button ("Request data room access"), then the stat row on a band along the bottom | Ink Black, full photo |
 | 2 | Strategy: deal flow from the affiliated originator first, then what we buy, risk controls, and a small collateral bar last | `surface` #F6F3EC |
-| 3 | Opportunities: expandable fund rows showing name and status, opening to strategy, target net return, inception, distributions, lockup and a capital stack bar, then the Rule 506(c) note | Ink Black |
+| 3 | Opportunities: expandable fund rows showing name and status, opening to strategy, target return, inception, distributions, lockup and a capital stack bar, then the Rule 506(c) note | Ink Black |
 | 4 | Team: principals, one sentence on outside administration, audit and legal work | `surface-sunk` #ECE6DA |
 | 5 | Investor access (accredited-investor verification for 506(c) offerings) and footer | Ink Black |
 
