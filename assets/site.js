@@ -62,6 +62,72 @@
     });
   }
 
+  // Team bios and fund rows start collapsed here, so they stay readable if this script never runs.
+  // Toggling one changes the panel's height, so the pins are measured again once it settles.
+  // If the shorter panel leaves the toggle under the next section, return to the top of that section.
+  let bioSettle;
+  const bioToggles = document.querySelectorAll("[data-bio-toggle]");
+  // ScrollTrigger locks a pinned panel and its spacer at a measured height.
+  // Those heights follow the content, so the section and the next one move with the toggle.
+  if (motionOk) {
+    new Set([...bioToggles].map((button) => button.closest(".panel"))).forEach((panel) => {
+      new ResizeObserver(() => {
+        const height = `${panel.firstElementChild.offsetHeight}px`;
+        panel.style.height = height;
+        panel.style.maxHeight = height;
+        if (panel.parentElement.classList.contains("pin-spacer")) panel.parentElement.style.height = height;
+      }).observe(panel.firstElementChild);
+    });
+  }
+  bioToggles.forEach((button) => {
+    const bio = document.getElementById(button.getAttribute("aria-controls"));
+    const stack = button.closest(".stack");
+    const nextPanel = stack.nextElementSibling?.querySelector(".panel");
+    const setOpen = (open) => {
+      button.setAttribute("aria-expanded", String(open));
+      bio.classList.toggle("is-closed", !open);
+    };
+    setOpen(false);
+    // Where the section pins at a given height: its top, or its bottom edge if it is taller than the screen
+    const pinStart = (height) =>
+      stack.getBoundingClientRect().top + window.scrollY + Math.max(0, height - window.innerHeight);
+    // Closing can leave the toggle under the next section. If it will, scroll back as the bio closes,
+    // on the same 500ms curve (easeOutQuint is cubic-bezier(0.22, 1, 0.36, 1)), so both land together.
+    const scrollWithClose = () => {
+      if (!lenis || !nextPanel || bio.getAnimations().length) return;
+      const panel = button.closest(".panel");
+      bio.style.transition = "none";
+      bio.classList.add("is-closed");
+      const closedHeight = panel.firstElementChild.offsetHeight;
+      bio.classList.remove("is-closed");
+      void bio.offsetHeight; // commit the open state so the close still animates
+      bio.style.transition = "";
+      const target = pinStart(closedHeight);
+      const stackTop = target - Math.max(0, closedHeight - window.innerHeight);
+      const y = window.scrollY;
+      const toggleBottom = button.getBoundingClientRect().bottom - panel.getBoundingClientRect().top;
+      const panelTop = stackTop - Math.min(y, target);
+      if (stackTop + closedHeight - y < panelTop + toggleBottom) {
+        lenis.scrollTo(target, { duration: 0.5, easing: (t) => 1 - (1 - t) ** 5, force: true });
+      }
+    };
+    button.addEventListener("click", () => {
+      const open = button.getAttribute("aria-expanded") !== "true";
+      if (!open) scrollWithClose();
+      setOpen(open);
+      clearTimeout(bioSettle);
+      bioSettle = setTimeout(() => {
+        ScrollTrigger.refresh();
+        lenis?.resize();
+        if (nextPanel && button.getBoundingClientRect().bottom > nextPanel.getBoundingClientRect().top) {
+          const target = pinStart(button.closest(".panel").offsetHeight);
+          if (lenis) lenis.scrollTo(target, { immediate: true, force: true });
+          else window.scrollTo(0, target);
+        }
+      }, motionOk ? 560 : 0);
+    });
+  });
+
   // Mark the nav item for the section in view
   const navLinks = document.querySelectorAll("[data-nav]");
   document.querySelectorAll(".stack[id]").forEach((stack) => {
