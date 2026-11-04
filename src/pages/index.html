@@ -153,22 +153,45 @@
   <div class="stack" id="team">
     <section class="panel bg-surface-sunk">
       <div class="mx-auto max-w-site px-6 py-24">
-        <h2 class="max-w-3xl text-h1 font-light">The team</h2>
+        <div class="grid gap-12 lg:grid-cols-12 lg:gap-6">
+          <div class="lg:col-span-4">
+            <h2 class="text-h1 font-light">The team</h2>
+            <p class="mt-6 max-w-2xl text-ink-muted">Outside firms handle fund administration, audit and legal work, so investors can check our reporting against records we do not control.</p>
+          </div>
 
-        <div class="mt-24 grid gap-12 md:grid-cols-2 md:gap-6">
-          <article class="border-t border-line pt-6">
-            <h3 class="text-h3 font-medium">Charles McKinney</h3>
-            <p class="mt-1 text-small text-ink-muted"><span class="tbd">[Title]</span></p>
-            <p class="mt-4 text-ink-muted"><span class="tbd">[Bio: years in residential credit or real estate finance, prior firms and roles, and responsibilities at {{brand}}. Two to four sentences.]</span></p>
+          <div class="grid items-start gap-12 md:grid-cols-2 md:gap-6 lg:col-span-8">
+          <article>
+            <img class="team-photo" src="./assets/team/charles-mckinney.webp" alt="Charles McKinney" width="800" height="800" loading="lazy">
+            <h3>
+              <button class="bio-toggle" type="button" aria-expanded="true" aria-controls="bio-charles" data-bio-toggle>
+                <span>
+                  <span class="block text-h3 font-medium">Charles McKinney</span>
+                  <span class="mt-1 block text-small text-ink-muted">Managing Partner</span>
+                </span>
+                <span class="bio-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="bio" id="bio-charles"><div>
+            <p class="pt-4 text-ink-muted">Charles McKinney covers investment structuring and risk management. Charles has a 22-year career as an entrepreneur, real estate investor, and financial services executive. Charles is the CEO and cofounder of Vontive and Certain Lending, fast-growing mortgage-technology and fintech lending businesses focused on real estate investors and backed by leading venture capital firms. Previously, Charles was senior vice president and head of analytics at Ten-X | Auction.com. From 2009 to 2014, Charles was one of the executives responsible for managing credit losses for Freddie Mac’s $1.4 trillion single-family mortgage portfolio, where he oversaw sales of more than 450,000 distressed properties to real estate investors.</p>
+            </div></div>
           </article>
-          <article class="border-t border-line pt-6">
-            <h3 class="text-h3 font-medium">Kunaal Kumar</h3>
-            <p class="mt-1 text-small text-ink-muted"><span class="tbd">[Title]</span></p>
-            <p class="mt-4 text-ink-muted"><span class="tbd">[Bio: years in residential credit or real estate finance, prior firms and roles, and responsibilities at {{brand}}. Two to four sentences.]</span></p>
+          <article>
+            <img class="team-photo" src="./assets/team/kunaal-kumar.jpg" alt="Kunaal Kumar" width="960" height="1280" loading="lazy">
+            <h3>
+              <button class="bio-toggle" type="button" aria-expanded="true" aria-controls="bio-kunaal" data-bio-toggle>
+                <span>
+                  <span class="block text-h3 font-medium">Kunaal Kumar</span>
+                  <span class="mt-1 block text-small text-ink-muted">Partner</span>
+                </span>
+                <span class="bio-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="bio" id="bio-kunaal"><div>
+            <p class="pt-4 text-ink-muted">Kunaal Kumar covers risk analytics, investor reporting, capital raising, and portfolio management. Kunaal has an extensive background in computer science and quantitative finance, with experience developing algorithmic trading strategies for equities and derivatives, as well as working at a leading big tech firm. He began investing in real estate by building a rental portfolio in Seattle while working as a software engineer full-time, eventually transitioning to focus on capital raising and deploying capital into real estate credit strategies at scale.</p>
+            </div></div>
           </article>
+          </div>
         </div>
-
-        <p class="mt-12 max-w-2xl text-ink-muted">Outside firms handle fund administration, audit and legal work, so investors can check our reporting against records we do not control.</p>
       </div>
     </section>
   </div>

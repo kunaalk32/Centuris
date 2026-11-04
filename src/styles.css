@@ -332,6 +332,76 @@
     box-shadow: 0 -12px 48px rgba(1, 22, 39, 0.32);
   }
 
+  /* Team portraits share one crop and a restrained grade */
+  .team-photo {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: 50% 30%;
+    filter: saturate(0.85);
+  }
+
+  .bio-toggle {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    cursor: pointer;
+  }
+
+  /* A plus drawn from two hairlines, turning into a cross when its bio is open */
+  .bio-icon {
+    position: relative;
+    flex: none;
+    width: 16px;
+    height: 16px;
+    color: var(--ink);
+    transition: transform 500ms var(--ease-settle);
+  }
+
+  .bio-icon::before,
+  .bio-icon::after {
+    content: "";
+    position: absolute;
+    inset: 7.5px 0;
+    background: currentColor;
+  }
+
+  .bio-icon::after {
+    transform: rotate(90deg);
+  }
+
+  .bio-toggle[aria-expanded="true"] .bio-icon {
+    transform: rotate(45deg);
+  }
+
+  @media (hover: hover) {
+    .bio-toggle:hover .bio-icon {
+      color: var(--camel-text);
+    }
+  }
+
+  /* Rows ease between 0fr and 1fr, so the bio opens to its natural height */
+  .bio {
+    display: grid;
+    grid-template-rows: 1fr;
+    transition: grid-template-rows 500ms var(--ease-settle), visibility 500ms;
+  }
+
+  .bio > div {
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .bio.is-closed {
+    grid-template-rows: 0fr;
+    visibility: hidden;
+  }
+
   .legal h2 {
     margin-top: 48px;
     font-size: 20px;
@@ -357,6 +427,11 @@
 
   .menu-item {
     transform: none;
+  }
+
+  .bio,
+  .bio-icon {
+    transition: none;
   }
 }
 
@@ -401,6 +476,15 @@
   }
 
   .stack + .stack .panel::before {
+    display: none;
+  }
+
+  .bio.is-closed {
+    grid-template-rows: 1fr;
+    visibility: visible;
+  }
+
+  .bio-icon {
     display: none;
   }
 }
