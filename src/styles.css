@@ -159,6 +159,45 @@
     background: color-mix(in srgb, var(--on-brand) 12%, var(--brand));
   }
 
+  /* Hovering a segment or its legend entry lifts that pair and quiets the other segments */
+  .stack-bar > span {
+    transition: opacity 300ms var(--ease-settle), transform 300ms var(--ease-settle);
+  }
+
+  .stack-figure li {
+    transition: color 300ms var(--ease-settle);
+  }
+
+  .limit-line {
+    pointer-events: none;
+  }
+
+  @media (hover: hover) {
+    .stack-figure:has([data-seg]:hover, [data-key]:hover) [data-seg] {
+      opacity: 0.55;
+    }
+
+    .stack-figure:has([data-seg="senior"]:hover, [data-key="senior"]:hover) [data-seg="senior"],
+    .stack-figure:has([data-seg="fund"]:hover, [data-key="fund"]:hover) [data-seg="fund"],
+    .stack-figure:has([data-seg="equity"]:hover, [data-key="equity"]:hover) [data-seg="equity"] {
+      opacity: 1;
+      transform: scaleY(1.08);
+    }
+
+    .stack-figure:has([data-seg="senior"]:hover) [data-key="senior"],
+    .stack-figure:has([data-seg="fund"]:hover) [data-key="fund"],
+    .stack-figure:has([data-seg="equity"]:hover) [data-key="equity"],
+    .stack-figure [data-key]:hover {
+      color: var(--on-brand);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .stack-bar > span {
+      transform: none !important;
+    }
+  }
+
   .link {
     text-decoration: underline;
     text-decoration-thickness: 1px;
