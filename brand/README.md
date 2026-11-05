@@ -2,7 +2,7 @@
 
 Centuris Capital is the GP brand for a private credit sponsor in residential transition lending (formerly Bozeman Capital Partners). The name comes from the Latin *centuria*, a hundred, read here as a long time horizon. The brand should read as an established institution, not a startup and not a regional lender. It should look like a firm that measures itself in decades.
 
-**Retired tagline:** Capital for generations, not quarters. Not used on the website, because it sits awkwardly beside short duration lending.
+**Tagline:** Strategies for generations, not quarters. Used as the website's hero headline. Keep "short duration" out of the hero, because it sits awkwardly beside this line.
 
 ## Brand position
 
@@ -85,8 +85,8 @@ The website does not mention the former name.
 
 | # | Section | Background |
 | --- | --- | --- |
-| 1 | Hero: "Short duration residential credit" as H1 in ivory on open sky, one sentence on the strategy, one camel button ("Request data room access"), then the stat row on a band along the bottom | Ink Black, full photo |
-| 2 | Strategy: deal flow from the affiliated originator first, then what we buy, why small residential, and risk controls | `surface` #F6F3EC |
+| 1 | Hero: "Strategies for generations, not quarters" as H1 in ivory on open sky, one sentence on the approach, one camel button ("Request data room access"), then the stat row on a band along the bottom. Don't pin the firm to one strategy here | Ink Black, full photo |
+| 2 | Strategy: short duration residential credit as the original strategy and what the current funds invest in, deal flow from the affiliated originator, then what we buy, why small residential, and risk controls | `surface` #F6F3EC |
 | 3 | Opportunities: expandable fund rows showing name and status, opening to strategy, target return, inception, distributions, lockup and a capital stack bar, then the Rule 506(c) note | Ink Black |
 | 4 | Team: principals, one sentence on outside administration, audit and legal work | `surface-sunk` #ECE6DA |
 | 5 | Investor access (accredited-investor verification for 506(c) offerings) and footer | Ink Black |
