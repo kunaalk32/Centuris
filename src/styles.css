@@ -486,8 +486,10 @@
   }
 }
 
-/* Lenis drives scrolling when it is running */
-.lenis.lenis-smooth {
+/* Lenis drives scrolling when it is running. Native smooth scrolling has to stay off the whole time:
+   ScrollTrigger measures after scrollTo(0, 0), and if that call animates, the pins are measured from
+   the wrong position. */
+.lenis {
   scroll-behavior: auto !important;
 }
 
