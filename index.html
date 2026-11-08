@@ -5,437 +5,125 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#011627">
 <meta name="robots" content="noindex">
+<meta name="description" content="Centuris Capital is a private credit manager. Our full website is in preparation.">
+<title>Centuris Capital</title>
 <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&display=swap">
-<link rel="stylesheet" href="./assets/site.css">
-<script src="./assets/vendor/gsap.min.js" defer></script>
-<script src="./assets/vendor/ScrollTrigger.min.js" defer></script>
-<script src="./assets/vendor/lenis.min.js" defer></script>
-<script src="./assets/site.js" defer></script>
-
-<title>Centuris Capital | Opportunistic credit strategies</title>
-<meta name="description" content="Centuris Capital is a private credit manager pursuing opportunistic credit strategies. Information for institutional and accredited investors.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Centuris Capital">
-<meta property="og:description" content="A private credit manager pursuing opportunistic credit strategies.">
-<meta property="og:image" content="https://images.unsplash.com/photo-1518966870461-3b4d5b868fdd?auto=format&fit=crop&w=2400&q=70">
-<script type="application/json" id="site-config">{"activecampaign":{"account":"","formId":"","fields":{"firm":"","role":"","allocation":"","status":""}}}</script>
+<style>
+  /* Values from brand/tokens.css. This page is a single Ink Black band. */
+  :root {
+    --brand: #011627;
+    --on-brand: #F6F3EC;
+    --on-brand-muted: #A9B3BF;
+    --camel: #B4925E;
+    --on-camel: #011627;
+    --line-on-brand: rgba(246, 243, 236, 0.14);
+    --font-sans: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    background: var(--brand);
+    color: var(--on-brand);
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 28px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+  header { padding-top: 48px; }
+  header img { display: block; width: 200px; height: auto; }
+  main { flex: 1; display: flex; align-items: center; padding: 96px 0; }
+  h1 {
+    margin: 0;
+    max-width: 14em;
+    font-size: 44px;
+    line-height: 50px;
+    font-weight: 300;
+    text-wrap: balance;
+  }
+  .lede {
+    margin: 24px 0 0;
+    max-width: 34em;
+    color: var(--on-brand-muted);
+    text-wrap: pretty;
+  }
+  .actions {
+    margin-top: 48px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px 24px;
+  }
+  .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 2px;
+    background: var(--camel);
+    color: var(--on-camel);
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 300ms var(--ease), transform 300ms var(--ease);
+  }
+  .btn:hover { background: #C4A574; }
+  .btn:active { transform: translateY(1px); }
+  .link {
+    color: var(--on-brand);
+    font-size: 16px;
+    text-decoration: underline;
+    text-decoration-color: var(--line-on-brand);
+    text-underline-offset: 4px;
+    transition: text-decoration-color 300ms var(--ease);
+  }
+  .link:hover { text-decoration-color: var(--camel); }
+  a:focus-visible { outline: 2px solid var(--camel); outline-offset: 4px; }
+  footer {
+    border-top: 1px solid var(--line-on-brand);
+    padding: 24px 0 48px;
+    color: var(--on-brand-muted);
+    font-size: 14px;
+    line-height: 22px;
+  }
+  footer p { margin: 0; max-width: 60em; }
+  footer p + p { margin-top: 16px; }
+  @media (min-width: 768px) {
+    header img { width: 240px; }
+    h1 { font-size: 64px; line-height: 68px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .btn, .link { transition: none; }
+  }
+</style>
 </head>
-<body class="bg-surface font-sans text-body text-ink antialiased">
-<a href="#main" class="skip-link">Skip to content</a>
-<header class="site-header fixed inset-x-0 top-0 z-40" data-header>
-  <div class="mx-auto flex h-16 max-w-site items-center justify-between px-6">
-    <a href="./" aria-label="Centuris Capital home" class="relative z-50 block">
-      <img class="logo-dark w-[180px]" src="./assets/logos/centuris-wordmark-on-dark.svg" alt="" width="180">
-      <img class="logo-light w-[180px]" src="./assets/logos/centuris-wordmark-on-light.svg" alt="" width="180">
-    </a>
-    <nav aria-label="Primary" class="hidden lg:block">
-      <ul class="flex items-center gap-8 text-small">
-        <li><a class="nav-link" href="./#strategy" data-nav="strategy">Strategy</a></li>
-        <li><a class="nav-link" href="./#opportunities" data-nav="opportunities">Opportunities</a></li>
-        <li><a class="nav-link" href="./#team" data-nav="team">Team</a></li>
-      </ul>
-    </nav>
-    <div class="hidden items-center gap-6 lg:flex">
-      <a class="nav-link text-small" href="https://portal.navfundservices.com/navportalcore/login" target="_blank" rel="noopener">Investor login</a>
-      <a class="btn-quiet" href="./#access">Request access</a>
-    </div>
-    <button type="button" class="menu-toggle relative z-50 grid h-11 w-11 cursor-pointer place-content-center gap-2 lg:hidden" aria-expanded="false" aria-controls="menu" data-menu-toggle>
-      <span class="sr-only">Menu</span>
-      <span class="block h-px w-6 bg-current" aria-hidden="true"></span>
-      <span class="block h-px w-6 bg-current" aria-hidden="true"></span>
-    </button>
-  </div>
+<body>
+<header class="wrap">
+  <img src="./assets/logos/centuris-wordmark-on-dark.svg" alt="Centuris Capital" width="240" height="20">
 </header>
 
-<div id="menu" class="menu-panel fixed inset-0 z-30 bg-surface text-ink lg:hidden" data-menu hidden>
-  <nav aria-label="Mobile" class="flex h-full flex-col justify-between px-6 pt-24 pb-12">
-    <ul class="flex flex-col gap-4 text-h1 font-light">
-      <li class="menu-item"><a class="nav-link" href="./#strategy">Strategy</a></li>
-      <li class="menu-item"><a class="nav-link" href="./#opportunities">Opportunities</a></li>
-      <li class="menu-item"><a class="nav-link" href="./#team">Team</a></li>
-    </ul>
-    <div class="menu-item flex flex-col items-start gap-6">
-      <a class="nav-link" href="https://portal.navfundservices.com/navportalcore/login" target="_blank" rel="noopener">Investor login</a>
-      <a class="btn" href="./#access">Request access</a>
+<main class="wrap">
+  <div>
+    <h1>Strategies for generations, not quarters</h1>
+    <p class="lede">Centuris Capital is a private credit manager. Our full website is in preparation. In the meantime, our team is available by email.</p>
+    <div class="actions">
+      <a class="btn" href="mailto:info@centuriscapital.com">Contact the team</a>
+      <a class="link" href="https://portal.navfundservices.com/navportalcore/login" rel="noopener">Existing investors: portal login</a>
     </div>
-  </nav>
-</div>
-
-<main id="main">
-
-  <!-- Hero -->
-  <div class="stack" id="top">
-    <section class="panel on-dark relative flex min-h-svh flex-col overflow-hidden bg-brand text-on-brand" data-hero>
-      <img class="parallax-img object-[30%_50%] md:object-left" src="https://images.unsplash.com/photo-1518966870461-3b4d5b868fdd?auto=format&fit=crop&w=2400&q=70" alt="" fetchpriority="high" data-parallax>
-      <div class="absolute inset-0 bg-brand/50" aria-hidden="true"></div>
-      <div class="relative mx-auto w-full max-w-site flex-1 px-6 pt-32 pb-12 md:pt-40">
-        <h1 class="max-w-4xl text-h1 font-light md:text-display">Strategies for generations,<br class="hidden sm:inline"> not quarters</h1>
-        <p class="mt-6 max-w-2xl">Centuris Capital is an opportunistic private credit manager focused on long-term capital preservation and compounding through disciplined risk management and attractive, risk-adjusted returns.</p>
-        <a class="btn mt-12" href="#access">Request data room access</a>
-      </div>
-      <div class="hero-band relative bg-brand/90">
-        <div class="mx-auto w-full max-w-site px-6 py-8">
-          <dl class="stat-row tabular grid grid-cols-2 md:grid-cols-4">
-            <div class="flex flex-col-reverse justify-end gap-2">
-              <dt class="text-small text-on-brand-muted">Equity under management</dt>
-              <dd class="text-figure" data-count="0">$85M+</dd>
-            </div>
-            <div class="flex flex-col-reverse justify-end gap-2">
-              <dt class="text-small text-on-brand-muted">Inception</dt>
-              <dd class="text-figure" data-count="2000">2022</dd>
-            </div>
-            <div class="flex flex-col-reverse justify-end gap-2">
-              <dt class="text-small text-on-brand-muted">Principal losses since inception</dt>
-              <dd class="text-figure" data-count="0">$0</dd>
-            </div>
-            <div class="flex flex-col-reverse justify-end gap-2">
-              <dt class="text-small text-on-brand-muted">States</dt>
-              <dd class="text-figure" data-count="0">45</dd>
-            </div>
-          </dl>
-          <p class="mt-6 max-w-3xl text-fine text-on-brand-muted">As of September 30, 2026. Principal losses are realized losses since inception across all vehicles. Past performance does not guarantee future results. <a class="link whitespace-nowrap" href="#disclosures">Read the disclosures</a></p>
-        </div>
-      </div>
-    </section>
   </div>
+</main>
 
-  <!-- Strategy -->
-  <div class="stack" id="strategy">
-    <section class="panel bg-surface">
-      <div class="mx-auto max-w-site px-6 py-24">
-        <h2 class="max-w-4xl text-h1 font-light md:text-display">Direct access to origination</h2>
-        <p class="mt-12 max-w-2xl">Our investment platform was built around short-duration residential real estate credit. We source loans through a programmatic relationship with a nationally scaled origination platform affiliated with the manager, applying our own independent underwriting criteria to every investment.</p>
-
-        <div class="mt-24 grid gap-12">
-          <article class="grid gap-4 border-t border-line pt-6 lg:grid-cols-12 lg:gap-6">
-            <h3 class="text-h3 font-medium lg:col-span-4">What we buy</h3>
-            <div class="lg:col-span-8">
-              <p class="text-ink-muted">Primarily first lien, business purpose loans to experienced investors who renovate, build or hold one to four unit homes before selling or refinancing.</p>
-              <dl class="tabular mt-6">
-                <div class="flex items-baseline justify-between gap-6 border-t border-line py-2">
-                  <dt class="text-small text-ink-muted">Typical loan life</dt>
-                  <dd>12 to 18 months</dd>
-                </div>
-                <div class="flex items-baseline justify-between gap-6 border-t border-line py-2">
-                  <dt class="text-small text-ink-muted">Target loan to value, as is and after repair</dt>
-                  <dd class="shrink-0">Below 70%</dd>
-                </div>
-                <div class="flex items-baseline justify-between gap-6 border-t border-line py-2">
-                  <dt class="text-small text-ink-muted">Maximum loan to value</dt>
-                  <dd>75%</dd>
-                </div>
-                <div class="flex items-baseline justify-between gap-6 border-t border-line py-2">
-                  <dt class="text-small text-ink-muted">Target loan to cost</dt>
-                  <dd>80%</dd>
-                </div>
-                <div class="flex items-baseline justify-between gap-6 border-t border-line py-2">
-                  <dt class="text-small text-ink-muted">States</dt>
-                  <dd>45</dd>
-                </div>
-              </dl>
-            </div>
-          </article>
-          <article class="grid gap-4 border-t border-line pt-6 lg:grid-cols-12 lg:gap-6">
-            <h3 class="text-h3 font-medium lg:col-span-4">Why small residential</h3>
-            <p class="text-ink-muted lg:col-span-8">Most single-family homes are financed with long-term, fixed-rate mortgages, making the asset class less sensitive to changes in interest rates than commercial real estate. This helps support the stability of our collateral. The smaller size of individual properties also allows us to diversify across a larger number of loans, reducing exposure to any single borrower or property.</p>
-          </article>
-          <article class="grid gap-4 border-t border-line pt-6 lg:grid-cols-12 lg:gap-6">
-            <h3 class="text-h3 font-medium lg:col-span-4">Risk controls</h3>
-            <p class="text-ink-muted lg:col-span-8">Every loan must meet our limits on loan to value, loan to cost, geography and borrower experience. Construction draws are released only after third party inspection, and past due loans follow a defined workout process.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- Opportunities -->
-  <div class="stack" id="opportunities">
-    <section class="panel on-dark bg-brand text-on-brand">
-      <div class="mx-auto max-w-site px-6 py-24">
-        <h2 class="max-w-3xl text-h1 font-light">Opportunities</h2>
-        <div class="mt-12 border-t border-line">
-          <article class="border-b border-line">
-            <h3>
-              <button class="bio-toggle fund-toggle" type="button" aria-expanded="true" aria-controls="fund-bpmof" data-bio-toggle>
-                <span class="flex grow flex-col gap-1 md:flex-row md:items-baseline md:justify-between md:gap-6">
-                  <span class="text-h3 font-medium">BP Mezzanine Opportunity Fund</span>
-                  <span class="text-on-brand-muted">Closed to new capital</span>
-                </span>
-                <span class="bio-icon" aria-hidden="true"></span>
-              </button>
-            </h3>
-            <div class="bio fund-panel" id="fund-bpmof"><div>
-              <div class="pt-6 pb-12">
-                <dl class="grid gap-6 md:grid-cols-12">
-                  <div class="md:col-span-12">
-                    <dt class="text-small text-on-brand-muted">Strategy</dt>
-                    <dd class="mt-1">Subordinate B notes on first lien, business purpose residential loans</dd>
-                  </div>
-                  <div class="md:col-span-3">
-                    <dt class="text-small text-on-brand-muted">Target return</dt>
-                    <dd class="mt-1">18%<sup>1</sup></dd>
-                  </div>
-                  <div class="md:col-span-3">
-                    <dt class="text-small text-on-brand-muted">Inception</dt>
-                    <dd class="mt-1">January 2022</dd>
-                  </div>
-                  <div class="md:col-span-3">
-                    <dt class="text-small text-on-brand-muted">Distributions</dt>
-                    <dd class="mt-1">Monthly</dd>
-                  </div>
-                  <div class="md:col-span-3">
-                    <dt class="text-small text-on-brand-muted">Lockup</dt>
-                    <dd class="mt-1">1 year</dd>
-                  </div>
-                </dl>
-                <p class="mt-4 text-small text-on-brand-muted"><sup>1</sup> Net annualized return. Target returns are not guaranteed and actual results may differ. See the offering documents. <a class="link" href="#disclosures">Read the disclosures</a></p>
-                <figure class="stack-figure mt-12 max-w-3xl">
-                  <figcaption class="font-medium">Position in the capital stack</figcaption>
-                  <div class="relative mt-6 pt-16" role="img" aria-label="A bar representing the full value of a home. A senior lender holds up to 63% of value, the fund's B note runs from 63% to 70%, and borrower equity sits above 70%.">
-                    <p class="absolute top-0 pr-2 text-right text-small" style="right: 37%">Attachment<br>63%</p>
-                    <p class="absolute top-0 pl-2 text-small" style="left: 70%">Detachment<br>70%</p>
-                    <div class="stack-bar flex h-12">
-                      <span class="stack-senior" data-seg="senior" style="width: 63%"></span>
-                      <span class="bg-camel" data-seg="fund" style="width: 7%"></span>
-                      <span class="stack-equity" data-seg="equity" style="width: 30%"></span>
-                    </div>
-                    <span class="limit-line bg-on-brand" style="left: 63%"></span>
-                    <span class="limit-line bg-on-brand" style="left: 70%"></span>
-                  </div>
-                  <div class="mt-2 flex justify-between gap-4 text-small text-on-brand-muted">
-                    <span>0%</span>
-                    <span>100% of value</span>
-                  </div>
-                  <ul class="mt-4 grid gap-2 text-small text-on-brand-muted md:flex md:flex-wrap md:gap-6">
-                    <li class="flex items-center gap-2" data-key="senior"><span class="stack-senior size-3 shrink-0" aria-hidden="true"></span>Senior lender, up to 63%</li>
-                    <li class="flex items-center gap-2" data-key="fund"><span class="size-3 shrink-0 bg-camel" aria-hidden="true"></span>The fund's B note, 63% to 70%</li>
-                    <li class="flex items-center gap-2" data-key="equity"><span class="stack-equity size-3 shrink-0" aria-hidden="true"></span>Borrower equity, above 70%</li>
-                  </ul>
-                  <p class="mt-4 text-small text-on-brand-muted">Shown as a share of property value, assuming a 70% loan to value. Attachment and detachment points are illustrative and are not commitments. Details are available in the data room.</p>
-                </figure>
-              </div>
-            </div></div>
-          </article>
-          <article class="border-b border-line">
-            <h3>
-              <button class="bio-toggle fund-toggle" type="button" aria-expanded="true" aria-controls="fund-bplcff" data-bio-toggle>
-                <span class="flex grow flex-col gap-1 md:flex-row md:items-baseline md:justify-between md:gap-6">
-                  <span class="text-h3 font-medium">BP Liquid Cash Flow Fund</span>
-                  <span class="text-on-brand-muted">Open</span>
-                </span>
-                <span class="bio-icon" aria-hidden="true"></span>
-              </button>
-            </h3>
-            <div class="bio fund-panel" id="fund-bplcff"><div>
-              <div class="pt-6 pb-12">
-                <dl class="grid gap-6 md:grid-cols-12">
-                  <div class="md:col-span-12">
-                    <dt class="text-small text-on-brand-muted">Strategy</dt>
-                    <dd class="mt-1">Whole first lien, business purpose residential loans, financed with a warehouse facility</dd>
-                  </div>
-                  <div class="md:col-span-3">
-                    <dt class="text-small text-on-brand-muted">Target return</dt>
-                    <dd class="mt-1">12% to 15%<sup>1,2</sup></dd>
-                  </div>
-                  <div class="md:col-span-3">
-                    <dt class="text-small text-on-brand-muted">Inception</dt>
-                    <dd class="mt-1">December 2025</dd>
-                  </div>
-                  <div class="md:col-span-3">
-                    <dt class="text-small text-on-brand-muted">Distributions</dt>
-                    <dd class="mt-1">Monthly</dd>
-                  </div>
-                  <div class="md:col-span-3">
-                    <dt class="text-small text-on-brand-muted">Lockup</dt>
-                    <dd class="mt-1">6 months to 1 year<sup>2</sup></dd>
-                  </div>
-                </dl>
-                <p class="mt-4 text-small text-on-brand-muted"><sup>1</sup> Net annualized return. Target returns are not guaranteed and actual results may differ. See the offering documents. <a class="link" href="#disclosures">Read the disclosures</a></p>
-                <p class="mt-1 text-small text-on-brand-muted"><sup>2</sup> Depending on share class.</p>
-                <figure class="stack-figure mt-12 max-w-3xl">
-                  <figcaption class="font-medium">Position in the capital stack</figcaption>
-                  <div class="relative mt-6 pt-16" role="img" aria-label="A bar representing the full value of a home. A warehouse lender holds up to 52.5% of value, the fund's equity runs from 52.5% to 70%, and borrower equity sits above 70%.">
-                    <p class="absolute top-0 pr-2 text-right text-small" style="right: 47.5%">Attachment<br>52.5%</p>
-                    <p class="absolute top-0 pl-2 text-small" style="left: 70%">Detachment<br>70%</p>
-                    <div class="stack-bar flex h-12">
-                      <span class="stack-senior" data-seg="senior" style="width: 52.5%"></span>
-                      <span class="bg-camel" data-seg="fund" style="width: 17.5%"></span>
-                      <span class="stack-equity" data-seg="equity" style="width: 30%"></span>
-                    </div>
-                    <span class="limit-line bg-on-brand" style="left: 52.5%"></span>
-                    <span class="limit-line bg-on-brand" style="left: 70%"></span>
-                  </div>
-                  <div class="mt-2 flex justify-between gap-4 text-small text-on-brand-muted">
-                    <span>0%</span>
-                    <span>100% of value</span>
-                  </div>
-                  <ul class="mt-4 grid gap-2 text-small text-on-brand-muted md:flex md:flex-wrap md:gap-6">
-                    <li class="flex items-center gap-2" data-key="senior"><span class="stack-senior size-3 shrink-0" aria-hidden="true"></span>Warehouse lender, up to 52.5%</li>
-                    <li class="flex items-center gap-2" data-key="fund"><span class="size-3 shrink-0 bg-camel" aria-hidden="true"></span>The fund's equity, 52.5% to 70%</li>
-                    <li class="flex items-center gap-2" data-key="equity"><span class="stack-equity size-3 shrink-0" aria-hidden="true"></span>Borrower equity, above 70%</li>
-                  </ul>
-                  <p class="mt-4 text-small text-on-brand-muted">Shown as a share of property value, assuming a 70% loan to value. Attachment and detachment points are illustrative and are not commitments. Details are available in the data room.</p>
-                </figure>
-                <a class="btn mt-12" href="#access">Request data room access</a>
-              </div>
-            </div></div>
-          </article>
-        </div>
-        <p class="mt-6 max-w-2xl text-small text-on-brand-muted">Funds are offered under Rule 506(c) of Regulation D, to accredited investors whose status we verify. Fees, terms, risk factors and conflicts of interest are in the offering documents. <a class="link" href="#access">Request data room access</a></p>
-      </div>
-    </section>
-  </div>
-
-  <!-- Team -->
-  <div class="stack" id="team">
-    <section class="panel bg-surface-sunk">
-      <div class="mx-auto max-w-site px-6 py-24">
-        <div class="grid gap-12 lg:grid-cols-12 lg:gap-6">
-          <div class="lg:col-span-4">
-            <h2 class="text-h1 font-light">The team</h2>
-            <p class="mt-6 max-w-2xl text-ink-muted">Centuris Capital is led by a team focused on private credit. Independent firms support the funds with administration, audit and legal services.</p>
-          </div>
-
-          <div class="grid items-start gap-12 md:grid-cols-2 md:gap-6 lg:col-span-8">
-          <article>
-            <img class="team-photo" src="./assets/team/charles-mckinney.webp" alt="Charles McKinney" width="800" height="800" loading="lazy">
-            <h3>
-              <button class="bio-toggle" type="button" aria-expanded="true" aria-controls="bio-charles" data-bio-toggle>
-                <span>
-                  <span class="block text-h3 font-medium">Charles McKinney</span>
-                  <span class="mt-1 block text-small text-ink-muted">Managing Partner</span>
-                </span>
-                <span class="bio-icon" aria-hidden="true"></span>
-              </button>
-            </h3>
-            <div class="bio" id="bio-charles"><div>
-            <p class="pt-4 text-ink-muted">Charles McKinney covers investment structuring and risk management. Charles has a 22-year career as an entrepreneur, real estate investor, and financial services executive. Charles is the CEO and cofounder of Vontive and Certain Lending, fast-growing mortgage-technology and fintech lending businesses focused on real estate investors and backed by leading venture capital firms. Previously, Charles was senior vice president and head of analytics at Ten-X | Auction.com. From 2009 to 2014, Charles was one of the executives responsible for managing credit losses for Freddie Mac’s $1.4 trillion single-family mortgage portfolio, where he oversaw sales of more than 450,000 distressed properties to real estate investors.</p>
-            </div></div>
-          </article>
-          <article>
-            <img class="team-photo" src="./assets/team/kunaal-kumar.jpg" alt="Kunaal Kumar" width="1024" height="1280" loading="lazy">
-            <h3>
-              <button class="bio-toggle" type="button" aria-expanded="true" aria-controls="bio-kunaal" data-bio-toggle>
-                <span>
-                  <span class="block text-h3 font-medium">Kunaal Kumar</span>
-                  <span class="mt-1 block text-small text-ink-muted">Partner</span>
-                </span>
-                <span class="bio-icon" aria-hidden="true"></span>
-              </button>
-            </h3>
-            <div class="bio" id="bio-kunaal"><div>
-            <p class="pt-4 text-ink-muted">Kunaal Kumar covers risk analytics, investor reporting, capital raising, and portfolio management. Kunaal has an extensive background in computer science and quantitative finance, with experience developing algorithmic trading strategies for equities and derivatives, as well as working at a leading big tech firm. He began investing in real estate by building a rental portfolio in Seattle while working as a software engineer full-time, eventually transitioning to focus on capital raising and deploying capital into real estate credit strategies at scale.</p>
-            </div></div>
-          </article>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- Investor access and footer -->
-  <div class="stack" id="access">
-    <section class="panel on-dark bg-brand text-on-brand">
-      <div class="mx-auto grid max-w-site gap-12 px-6 py-24 lg:grid-cols-12 lg:gap-6">
-        <div class="lg:col-span-5">
-          <h2 class="text-h1 font-light">Request data room access</h2>
-          <p class="mt-6 text-on-brand-muted">Our Data Room holds the offering documents, due diligence questionnaire, audited financials, performance history and portfolio data. We send access after reviewing each request.</p>
-          <dl class="mt-12 grid gap-6 text-small">
-            <div>
-              <dt class="text-on-brand-muted">Investor relations</dt>
-              <dd class="mt-1"><a class="link" href="mailto:info@centuriscapital.com">info@centuriscapital.com</a></dd>
-            </div>
-            <div>
-              <dt class="text-on-brand-muted">Existing investors</dt>
-              <dd class="mt-1"><a class="link" href="https://portal.navfundservices.com/navportalcore/login" target="_blank" rel="noopener">Investor portal login</a></dd>
-            </div>
-          </dl>
-        </div>
-
-        <div class="lg:col-span-6 lg:col-start-7">
-          <form class="space-y-6" novalidate data-access-form>
-            <div class="grid gap-6 sm:grid-cols-2">
-              <div>
-                <label for="f-name" class="text-small">Full name</label>
-                <input id="f-name" name="fullname" class="field mt-2" autocomplete="name" required>
-                <p class="field-error mt-2" hidden></p>
-              </div>
-              <div>
-                <label for="f-email" class="text-small">Work email</label>
-                <input id="f-email" name="email" type="email" class="field mt-2" autocomplete="email" required>
-                <p class="field-error mt-2" hidden></p>
-              </div>
-              <div>
-                <label for="f-firm" class="text-small">Firm</label>
-                <input id="f-firm" name="firm" class="field mt-2" autocomplete="organization" required>
-                <p class="field-error mt-2" hidden></p>
-              </div>
-              <div>
-                <label for="f-role" class="text-small">Role</label>
-                <input id="f-role" name="role" class="field mt-2" autocomplete="organization-title" required>
-                <p class="field-error mt-2" hidden></p>
-              </div>
-            </div>
-
-            <div>
-              <label for="f-allocation" class="text-small">Expected allocation</label>
-              <select id="f-allocation" name="allocation" class="field mt-2" required>
-                <option value="">Select a range</option>
-                <option>Under $1M</option>
-                <option>$1M to $5M</option>
-                <option>$5M to $25M</option>
-                <option>Over $25M</option>
-              </select>
-              <p class="field-error mt-2" hidden></p>
-            </div>
-
-            <fieldset>
-              <legend class="sr-only">Investor status</legend>
-              <label class="flex items-center gap-4"><input type="checkbox" name="status" value="Accredited investor" class="h-4 w-4 accent-camel"> I am, or represent, an accredited investor</label>
-              <p class="field-error mt-2" hidden></p>
-            </fieldset>
-
-            <p class="text-small text-on-brand-muted">By submitting, you confirm the information above is accurate. Access is limited to accredited investors, and we verify status before anyone invests. See our <a class="link" href="./privacy.html">privacy policy</a>.</p>
-
-            <div class="flex flex-wrap items-center gap-6">
-              <button type="submit" class="btn">Request data room access</button>
-              <p class="field-error" role="alert" data-form-error hidden></p>
-            </div>
-          </form>
-
-          <div tabindex="-1" data-form-success hidden>
-            <h3 class="text-h2 font-normal">Request received</h3>
-            <p class="mt-4 text-on-brand-muted">We will reply to <span data-success-email></span> after reviewing your request.</p>
-          </div>
-        </div>
-      </div>
-      <footer class="border-t border-line text-small text-on-brand-muted">
-  <div class="mx-auto max-w-site px-6 py-12">
-    <img class="w-[180px]" src="./assets/logos/centuris-wordmark-on-dark.svg" alt="Centuris Capital" width="180">
-
-    <div id="disclosures" class="mt-12 grid gap-6 border-t border-line pt-24 md:grid-cols-2">
-      <p>This website is not an offering or the solicitation of an offer to purchase an interest in Centuris Capital LLC, BP Mezzanine Opportunity Fund LLC, BP Liquid Cash Flow Fund or any other fund. Any such offer or solicitation will be made only to qualified investors by means of confidential offering documents, and only in jurisdictions where permitted by law.</p>
-      <p>All offers and sales of securities will be made only to accredited investors, in reliance on exemptions from registration under the Securities Act of 1933, primarily Rule 506(c) of Regulation D and Section 4(a)(2). Such offerings are not required to comply with the disclosure requirements that apply to registered offerings. The manager takes reasonable steps to verify the accredited status of every purchaser.</p>
-      <p>The SEC has not passed upon the merits of, or given its approval to, any securities offered, the terms of any offering, or the accuracy or completeness of any offering materials. Securities offered are subject to legal restrictions on transfer and resale, and investors should not assume they will be able to resell them.</p>
-      <p>BP Mezzanine Opportunity Fund and BP Liquid Cash Flow Fund rely on the exemption in Section 3(c)(5) of the Investment Company Act of 1940, are not registered under that Act and are not subject to its protections. Investing in securities involves risk, including loss of principal, and investors should be able to bear the loss of their investment. Past performance does not guarantee future results.</p>
-    </div>
-
-    <div class="mt-12 flex flex-col justify-between gap-4 sm:flex-row">
-      <p>&copy; 2026 Centuris Capital LLC. All rights reserved.</p>
-      <ul class="flex gap-6">
-        <li><a class="link" href="./privacy.html">Privacy policy</a></li>
-        <li><a class="link" href="./terms.html">Terms of use</a></li>
-      </ul>
-    </div>
+<footer>
+  <div class="wrap">
+    <p>This website is not an offering or the solicitation of an offer to purchase an interest in Centuris Capital LLC or any fund it manages. Any such offer or solicitation will be made only to qualified investors by means of confidential offering documents, and only in jurisdictions where permitted by law.</p>
+    <p>&copy; 2026 Centuris Capital LLC. All rights reserved.</p>
   </div>
 </footer>
-
-    </section>
-  </div>
-
-</main>
 </body>
 </html>
